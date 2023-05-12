@@ -1,6 +1,6 @@
 import { DiscordBot } from "bot-framework";
 import { StoreDependency } from "../support/store.js";
-import { TimeCommand } from "../commands/time.js";
+import { TimeCommand } from "../commands/time_command.js";
 
 export class TimeBotImpl extends DiscordBot {
   constructor() {
