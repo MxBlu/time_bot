@@ -26,7 +26,7 @@ export class TimezoneCommand implements CommandProvider<ChatInputCommandInteract
   }
 
   public provideHelpMessage(): string {
-    return "/time (<user>) (<timezone>) - Gets the time for a timezone or individual.";
+    return "/timezone <timezone> - Gets the time for a timezone.";
   }
 
   public async handle(interaction: ChatInputCommandInteraction): Promise<void> {

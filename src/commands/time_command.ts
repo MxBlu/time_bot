@@ -25,7 +25,7 @@ export class TimeCommand implements CommandProvider<ChatInputCommandInteraction>
   }
 
   public provideHelpMessage(): string {
-    return "/time <user> - Gets the time for a given user.";
+    return "/time (<user>) - Gets the time for a given user or self";
   }
 
   public async handle(interaction: ChatInputCommandInteraction): Promise<void> {
@@ -48,7 +48,7 @@ export class TimeCommand implements CommandProvider<ChatInputCommandInteraction>
     // Generate message to send
     const message = `${timezone} - ` + formatInTimeZone(new Date(), timezone, `EEE do MMM, hh:mm aaa`);
     // Send message
-    this.logger.info(`Got time: timezone=${timezone} user=${user}`);
+    this.logger.info(`Got time: timezone=${timezone} user=${user.username}`);
     interaction.reply(message);
   }
 }
