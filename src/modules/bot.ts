@@ -1,5 +1,6 @@
 import { DiscordBot } from "bot-framework";
 import { StoreDependency } from "../support/store.js";
+import { TimeCommand } from "../commands/time.js";
 
 export class TimeBotImpl extends DiscordBot {
   constructor() {
@@ -15,6 +16,7 @@ export class TimeBotImpl extends DiscordBot {
 
   public loadProviders(): void {
     // TODO: Add command providers here
+    this.providers.push(new TimeCommand());
   }
 
   public getHelpMessage(): string {
