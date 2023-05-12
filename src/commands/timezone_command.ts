@@ -39,7 +39,7 @@ export class TimezoneCommand implements CommandProvider<ChatInputCommandInteract
     }
 
     // Generate message to send
-    const message = `${timezone} - ` + formatInTimeZone(new Date(), timezone, `EEE do MMM, hh:mm aaa`);
+    const message = `**${timezone}** - ` + formatInTimeZone(new Date(), timezone, `EEE do MMM, hh:mm aaa`);
     // Send message
     this.logger.info(`Got time: timezone=${timezone}`);
     interaction.reply(message);
