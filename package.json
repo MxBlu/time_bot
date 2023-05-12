@@ -1,0 +1,32 @@
+{
+  "name": "time_bot",
+  "version": "0.1.0",
+  "description": "Tells the time but cool",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon --watch src/** --ext ts,json --exec node --experimental-specifier-resolution=node --loader ts-node/esm src/main.ts",
+    "fstart": "pm2 start --name timebot built/main.js",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "lint": "eslint . --ext .ts"
+  },
+  "repository": "https://github.com/MxBlu/time_bot",
+  "author": "MxBlu",
+  "license": "Rights reserved",
+  "devDependencies": {
+    "@types/node": "^20.1.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
+    "@typescript-eslint/parser": "^5.59.5",
+    "eslint": "^8.40.0",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "5.0.4"
+  },
+  "dependencies": {
+    "bot-framework": "Mxblu/bot-framework#7.0.1",
+    "discord-api-types": "0.37.37",
+    "discord.js": "14.8.0",
+    "dotenv": "16.0.3"
+  }
+}

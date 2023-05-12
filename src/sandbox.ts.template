@@ -1,0 +1,22 @@
+import { Logger } from 'bot-framework';
+import * as dotenv from 'dotenv';
+dotenv.config();
+
+/*
+  Generic alternative main file for testing whatever needs to be tested
+*/
+
+const logger = new Logger("Sandbox");
+logger.registerAsGlobal();
+
+async function main() {
+  // noop
+}
+
+main().then(() => {
+  console.error("hit then?");
+  process.exit(0);
+}).catch(e => {
+  console.error(e);
+  process.exit(1);
+});
