@@ -18,6 +18,10 @@ class TimezonesImpl {
   public search(query: string): string[] {
     return this.fuse.search(query).map(r => r.item);
   }
+
+  public isValid(timezone: string): boolean {
+    return Intl.supportedValuesOf('timeZone').includes(timezone);
+  }
 }
 
 export const Timezones = new TimezonesImpl();

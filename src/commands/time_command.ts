@@ -79,6 +79,4 @@ export class TimeCommand implements CommandProvider<ChatInputCommandInteraction>
       value: s
     })));
   }
-
-  
 }
