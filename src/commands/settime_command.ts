@@ -37,9 +37,11 @@ export class SetTimeCommand implements CommandProvider<ChatInputCommandInteracti
     const timezone = interaction.options.getString('timezone');
     let user = interaction.options.getUser('user');
     // User should only be defined by admins, make sure the current user is an admin
-    if (user != null && ! await isAdmin(guild, interaction.user)) {
-      sendCmdReply(interaction, 'Error: Not admin', this.logger, LogLevel.TRACE);
-      return;
+    if (user != null) {
+      if (! await isAdmin(guild, interaction.user)) {
+        sendCmdReply(interaction, 'Error: Not admin', this.logger, LogLevel.TRACE);
+        return;
+      }
     } else {
       user = interaction.user;
     }
