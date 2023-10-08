@@ -5,8 +5,9 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon --watch src/** --ext ts,json --exec node --experimental-specifier-resolution=node --loader ts-node/esm src/main.ts",
+    "start": "node built/main.js",
     "fstart": "pm2 start --name timebot built/main.js",
+    "watch": "nodemon --watch src/** --ext ts,json --exec node --experimental-specifier-resolution=node --loader ts-node/esm src/main.ts",
     "build": "tsc --build",
     "clean": "tsc --build --clean",
     "lint": "eslint . --ext .ts"
